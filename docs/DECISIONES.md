@@ -2,6 +2,10 @@
 
 Registro de por qué el proyecto es como es. Fechas en formato AAAA-MM-DD.
 
+## Nota sobre el historial de commits
+
+El historial se organizó por capas a partir del código ya terminado (protección SSRF, descarga, parser, rastreador, comprobaciones, informes, CLI, documentación...), de modo que se lea en orden lógico y cada commit pase sus tests. No refleja el orden cronológico real del trabajo: todos los commits llevan la fecha de esa reorganización (16 de noviembre de 2026).
+
 ## Objetivo (2026-11-04)
 
 Un auditor SEO sencillo y efectivo: una sola orden, resultados reproducibles, que corra sin depender de ningún servicio externo ni de una sesión de Claude Code. Funciona en local; la ejecución en GitHub Actions es opcional (ver decisión 4).
