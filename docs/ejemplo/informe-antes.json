@@ -1,0 +1,476 @@
+{
+  "version_auditor": "0.2.0",
+  "version_nota": 1,
+  "generado": "2026-11-15T09:45:36+00:00",
+  "url": "http://127.0.0.1:8765/",
+  "url_final": "http://127.0.0.1:8765/",
+  "paginas_rastreadas": 8,
+  "rastreo_incompleto": false,
+  "bloqueadas_por_robots": 0,
+  "nota": 60,
+  "categorias": {
+    "indexacion": 54,
+    "onpage": 75,
+    "schema": 0,
+    "rendimiento": null,
+    "ia": 83
+  },
+  "comprobaciones": [
+    {
+      "id": "https",
+      "categoria": "indexacion",
+      "titulo": "El sitio no usa HTTPS",
+      "peso": 3,
+      "severidad": "alta",
+      "evaluadas": 1,
+      "fallos": 1,
+      "puntuacion": 0.0,
+      "consejo": "Sirve todo el sitio por HTTPS y redirige el tráfico HTTP.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/",
+          "detalle": "la URL final no es https"
+        }
+      ]
+    },
+    {
+      "id": "canonical_present",
+      "categoria": "indexacion",
+      "titulo": "Páginas sin canonical",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 6,
+      "fallos": 6,
+      "puntuacion": 0.0,
+      "consejo": "Añade <link rel=\"canonical\"> apuntando a la URL preferida de cada página.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/",
+          "detalle": ""
+        },
+        {
+          "url": "http://127.0.0.1:8765/productos",
+          "detalle": ""
+        },
+        {
+          "url": "http://127.0.0.1:8765/pan-de-masa-madre",
+          "detalle": ""
+        },
+        {
+          "url": "http://127.0.0.1:8765/horarios",
+          "detalle": ""
+        },
+        {
+          "url": "http://127.0.0.1:8765/blog/como-conservar-el-pan",
+          "detalle": ""
+        },
+        {
+          "url": "http://127.0.0.1:8765/contacto",
+          "detalle": ""
+        }
+      ]
+    },
+    {
+      "id": "jsonld_valid",
+      "categoria": "schema",
+      "titulo": "JSON-LD con errores de sintaxis",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 1,
+      "fallos": 1,
+      "puntuacion": 0.0,
+      "consejo": "Corrige el JSON de los bloques application/ld+json (solo se valida que sea JSON válido).",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/productos",
+          "detalle": "1 de 1 bloques inválidos"
+        }
+      ]
+    },
+    {
+      "id": "sitemap_xml",
+      "categoria": "indexacion",
+      "titulo": "No se encontró sitemap XML",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 1,
+      "fallos": 1,
+      "puntuacion": 0.0,
+      "consejo": "Publica un sitemap.xml y decláralo en robots.txt.",
+      "ejemplos": [
+        {
+          "url": "/sitemap.xml",
+          "detalle": "no encontrado"
+        }
+      ]
+    },
+    {
+      "id": "img_alt",
+      "categoria": "onpage",
+      "titulo": "Imágenes sin atributo alt",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 1,
+      "fallos": 1,
+      "puntuacion": 0.0,
+      "consejo": "Añade texto alternativo descriptivo (alt vacío solo en imágenes decorativas).",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/productos",
+          "detalle": "1 de 1 sin alt"
+        }
+      ]
+    },
+    {
+      "id": "jsonld_home",
+      "categoria": "schema",
+      "titulo": "La portada no tiene datos estructurados",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 1,
+      "fallos": 1,
+      "puntuacion": 0.0,
+      "consejo": "Añade JSON-LD (Organization o LocalBusiness, WebSite) en la portada.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/",
+          "detalle": ""
+        }
+      ]
+    },
+    {
+      "id": "title_unique",
+      "categoria": "onpage",
+      "titulo": "Títulos duplicados",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 5,
+      "fallos": 2,
+      "puntuacion": 0.6,
+      "consejo": "Da a cada página un título distinto.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/productos",
+          "detalle": "compartido con 1 página(s) más"
+        },
+        {
+          "url": "http://127.0.0.1:8765/pan-de-masa-madre",
+          "detalle": "compartido con 1 página(s) más"
+        }
+      ]
+    },
+    {
+      "id": "h1_single",
+      "categoria": "onpage",
+      "titulo": "Páginas sin un único H1",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 6,
+      "fallos": 2,
+      "puntuacion": 0.667,
+      "consejo": "Usa exactamente un H1 por página que describa su tema.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/pan-de-masa-madre",
+          "detalle": "2 H1"
+        },
+        {
+          "url": "http://127.0.0.1:8765/contacto",
+          "detalle": "sin H1"
+        }
+      ]
+    },
+    {
+      "id": "title_present",
+      "categoria": "onpage",
+      "titulo": "Páginas sin <title>",
+      "peso": 3,
+      "severidad": "alta",
+      "evaluadas": 6,
+      "fallos": 1,
+      "puntuacion": 0.833,
+      "consejo": "Cada página necesita un título propio y descriptivo.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/contacto",
+          "detalle": ""
+        }
+      ]
+    },
+    {
+      "id": "title_length",
+      "categoria": "onpage",
+      "titulo": "Títulos demasiado cortos o largos",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 5,
+      "fallos": 2,
+      "puntuacion": 0.6,
+      "consejo": "Intenta que el título tenga entre 30 y 60 caracteres (orientativo).",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/productos",
+          "detalle": "17 caracteres"
+        },
+        {
+          "url": "http://127.0.0.1:8765/pan-de-masa-madre",
+          "detalle": "17 caracteres"
+        }
+      ]
+    },
+    {
+      "id": "broken_links",
+      "categoria": "indexacion",
+      "titulo": "Enlaces internos rotos",
+      "peso": 3,
+      "severidad": "alta",
+      "evaluadas": 8,
+      "fallos": 1,
+      "puntuacion": 0.875,
+      "consejo": "Actualiza o elimina los enlaces que apuntan a páginas que no existen.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/ofertas",
+          "detalle": "HTTP 404; enlazada desde http://127.0.0.1:8765/"
+        }
+      ]
+    },
+    {
+      "id": "status_ok",
+      "categoria": "indexacion",
+      "titulo": "Páginas que responden con error",
+      "peso": 3,
+      "severidad": "alta",
+      "evaluadas": 8,
+      "fallos": 1,
+      "puntuacion": 0.875,
+      "consejo": "Corrige o redirige las URLs que devuelven 4xx/5xx o no responden.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/ofertas",
+          "detalle": "HTTP 404"
+        }
+      ]
+    },
+    {
+      "id": "meta_description_present",
+      "categoria": "onpage",
+      "titulo": "Páginas sin meta description",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 6,
+      "fallos": 1,
+      "puntuacion": 0.833,
+      "consejo": "Escribe una descripción única que resuma la página e invite al clic.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/horarios",
+          "detalle": ""
+        }
+      ]
+    },
+    {
+      "id": "noindex",
+      "categoria": "indexacion",
+      "titulo": "Páginas con noindex",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 6,
+      "fallos": 1,
+      "puntuacion": 0.833,
+      "consejo": "Confirma que cada página con noindex es intencionada; si no, quita la directiva.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/blog/como-conservar-el-pan",
+          "detalle": "noindex en meta robots o X-Robots-Tag"
+        }
+      ]
+    },
+    {
+      "id": "thin_content",
+      "categoria": "onpage",
+      "titulo": "Páginas con muy poco texto",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 6,
+      "fallos": 1,
+      "puntuacion": 0.833,
+      "consejo": "Amplía o consolida las páginas con menos de 150 palabras.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/horarios",
+          "detalle": "13 palabras"
+        }
+      ]
+    },
+    {
+      "id": "viewport",
+      "categoria": "onpage",
+      "titulo": "Falta la meta viewport",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 6,
+      "fallos": 1,
+      "puntuacion": 0.833,
+      "consejo": "Añade <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/horarios",
+          "detalle": ""
+        }
+      ]
+    },
+    {
+      "id": "redirect_chain",
+      "categoria": "indexacion",
+      "titulo": "Cadenas de redirección",
+      "peso": 2,
+      "severidad": "media",
+      "evaluadas": 8,
+      "fallos": 1,
+      "puntuacion": 0.875,
+      "consejo": "Enlaza directamente a la URL final para evitar saltos intermedios.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/tienda",
+          "detalle": "http://127.0.0.1:8765/tienda -> http://127.0.0.1:8765/catalogo -> http://127.0.0.1:8765/productos"
+        }
+      ]
+    },
+    {
+      "id": "ai_crawlers",
+      "categoria": "ia",
+      "titulo": "Rastreadores de IA bloqueados en robots.txt",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 6,
+      "fallos": 1,
+      "puntuacion": 0.833,
+      "consejo": "Si quieres aparecer en respuestas de IA, permite estos agentes. Si el bloqueo es intencionado, ignora este aviso.",
+      "ejemplos": [
+        {
+          "url": "/robots.txt",
+          "detalle": "GPTBot no puede acceder a /"
+        }
+      ]
+    },
+    {
+      "id": "lang_attr",
+      "categoria": "onpage",
+      "titulo": "Falta el atributo lang en <html>",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 6,
+      "fallos": 1,
+      "puntuacion": 0.833,
+      "consejo": "Declara el idioma de la página, por ejemplo <html lang=\"es\">.",
+      "ejemplos": [
+        {
+          "url": "http://127.0.0.1:8765/contacto",
+          "detalle": ""
+        }
+      ]
+    },
+    {
+      "id": "canonical_other",
+      "categoria": "indexacion",
+      "titulo": "Canonical que apunta a otra URL",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 0,
+      "fallos": 0,
+      "puntuacion": null,
+      "consejo": "Revisa que apuntar a otra URL sea intencionado; si no, usa la propia página.",
+      "ejemplos": []
+    },
+    {
+      "id": "hsts",
+      "categoria": "rendimiento",
+      "titulo": "Falta la cabecera HSTS",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 0,
+      "fallos": 0,
+      "puntuacion": null,
+      "consejo": "Envía Strict-Transport-Security para forzar HTTPS en los navegadores.",
+      "ejemplos": []
+    },
+    {
+      "id": "llms_txt",
+      "categoria": "ia",
+      "titulo": "No hay llms.txt (informativo)",
+      "peso": 0,
+      "severidad": "info",
+      "evaluadas": 1,
+      "fallos": 1,
+      "puntuacion": 0.0,
+      "consejo": "llms.txt es una propuesta de formato sin efecto demostrado en las respuestas de las IAs; se informa pero no puntúa.",
+      "ejemplos": [
+        {
+          "url": "/llms.txt",
+          "detalle": "no encontrado"
+        }
+      ]
+    },
+    {
+      "id": "meta_description_length",
+      "categoria": "onpage",
+      "titulo": "Meta description demasiado corta o larga",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 5,
+      "fallos": 0,
+      "puntuacion": 1.0,
+      "consejo": "Intenta que tenga entre 70 y 160 caracteres (orientativo).",
+      "ejemplos": []
+    },
+    {
+      "id": "meta_description_unique",
+      "categoria": "onpage",
+      "titulo": "Meta descriptions duplicadas",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 5,
+      "fallos": 0,
+      "puntuacion": 1.0,
+      "consejo": "Da a cada página una descripción distinta.",
+      "ejemplos": []
+    },
+    {
+      "id": "orphan_pages",
+      "categoria": "indexacion",
+      "titulo": "Páginas del sitemap sin enlaces internos",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 0,
+      "fallos": 0,
+      "puntuacion": null,
+      "consejo": "Enlaza estas páginas desde el resto del sitio o quítalas del sitemap.",
+      "ejemplos": []
+    },
+    {
+      "id": "response_time",
+      "categoria": "rendimiento",
+      "titulo": "Respuestas HTML lentas (informativo)",
+      "peso": 0,
+      "severidad": "info",
+      "evaluadas": 6,
+      "fallos": 0,
+      "puntuacion": 1.0,
+      "consejo": "Tiempo de descarga del HTML mayor de 1.5 s. No son Core Web Vitals y depende de la red, por eso no puntúa.",
+      "ejemplos": []
+    },
+    {
+      "id": "robots_txt",
+      "categoria": "indexacion",
+      "titulo": "Falta robots.txt",
+      "peso": 1,
+      "severidad": "baja",
+      "evaluadas": 1,
+      "fallos": 0,
+      "puntuacion": 1.0,
+      "consejo": "Publica un robots.txt en la raíz que declare tu sitemap.",
+      "ejemplos": []
+    }
+  ]
+}

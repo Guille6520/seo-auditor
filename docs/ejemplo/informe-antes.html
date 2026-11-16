@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
+<meta name="referrer" content="no-referrer">
+<title>Informe SEO: http://127.0.0.1:8765/</title>
+<style>
+:root {
+  --bg: #f5f6f8; --surface: #ffffff; --text: #1c2330; --muted: #5d6778; --border: #dfe3ea;
+  --track: #e6e9ef; --good: #1f8a4c; --mid: #b7791f; --bad: #c0392b; --none: #8a93a3;
+  --link: #1d5fbf; --warn-bg: #fff7e0; --warn-border: #e2b93b; --code-bg: #eef0f4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12151b; --surface: #1b2029; --text: #e6e9ef; --muted: #9aa4b5; --border: #2c3441;
+    --track: #2c3441; --good: #4cc27f; --mid: #e0a84a; --bad: #ee6b5c; --none: #7c8698;
+    --link: #7fb0f5; --warn-bg: #2e2812; --warn-border: #8a6d1c; --code-bg: #252c38;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text); line-height: 1.5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 920px; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-size: 1.5rem; margin: 0 0 4px; }
+h2 { font-size: 1.15rem; margin: 32px 0 12px; }
+h3 { font-size: 1rem; margin: 0; }
+p { margin: 0; }
+a { color: var(--link); }
+code { background: var(--code-bg); border-radius: 4px; padding: 1px 5px; font-size: 0.85em; }
+.muted { color: var(--muted); }
+.break { overflow-wrap: anywhere; word-break: break-word; }
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
+}
+.meta { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+.summary { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin-top: 20px; }
+.gauge { flex: 0 0 auto; width: 150px; height: 150px; margin: 0 auto; }
+.gauge-track { fill: none; stroke: var(--track); stroke-width: 12; }
+.gauge-value { fill: none; stroke-width: 12; stroke-linecap: round; }
+.gauge-number { font-size: 34px; font-weight: 700; fill: var(--text); }
+.gauge-unit { font-size: 12px; fill: var(--muted); }
+.categories { flex: 1 1 320px; min-width: 0; list-style: none; margin: 0; padding: 0; }
+.categories li { margin-bottom: 12px; }
+.categories li:last-child { margin-bottom: 0; }
+.cat-head { display: flex; justify-content: space-between; gap: 12px; font-size: 0.92rem; }
+.cat-score { font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; }
+.bar { height: 8px; background: var(--track); border-radius: 4px; overflow: hidden; margin-top: 4px; }
+.bar span { display: block; height: 100%; border-radius: 4px; }
+.good { stroke: var(--good); } .mid { stroke: var(--mid); }
+.bad { stroke: var(--bad); } .none { stroke: var(--none); }
+.bar .good { background: var(--good); } .bar .mid { background: var(--mid); }
+.bar .bad { background: var(--bad); } .bar .none { background: var(--none); }
+.notice {
+  background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 8px;
+  padding: 10px 14px; margin-top: 12px; font-size: 0.93rem;
+}
+.check { margin-bottom: 12px; }
+.check-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.check-meta { color: var(--muted); font-size: 0.88rem; margin: 6px 0 8px; }
+.badge {
+  display: inline-block; border: 1px solid currentColor; border-radius: 999px; padding: 0 9px;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.sev-alta { color: var(--bad); } .sev-media { color: var(--mid); }
+.sev-baja { color: var(--link); } .sev-info { color: var(--none); }
+details { margin-top: 10px; }
+summary { cursor: pointer; color: var(--link); font-size: 0.9rem; }
+.examples { margin: 8px 0 0; padding-left: 20px; font-size: 0.88rem; }
+.examples li { margin-bottom: 4px; }
+.plain { list-style: none; margin: 0; padding: 0; }
+.plain li {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px;
+  padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.93rem;
+}
+.plain li:last-child { border-bottom: 0; }
+footer { margin-top: 32px; color: var(--muted); font-size: 0.82rem; }
+@media (max-width: 520px) {
+  main { padding: 16px 12px 32px; }
+  h1 { font-size: 1.25rem; }
+  .gauge { width: 130px; height: 130px; }
+}
+@media print {
+  :root {
+    --bg: #ffffff; --surface: #ffffff; --text: #000000; --muted: #444444; --border: #bbbbbb;
+    --track: #dddddd; --good: #1f8a4c; --mid: #946200; --bad: #b02a1d; --none: #666666;
+    --link: #000000; --warn-bg: #ffffff; --warn-border: #888888; --code-bg: #eeeeee;
+  }
+  body { font-size: 11pt; }
+  main { max-width: none; padding: 0; }
+  .card, .notice { break-inside: avoid; }
+  h2 { break-after: avoid; }
+  .bar span, .gauge-value { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  details::details-content { content-visibility: visible; display: block; }
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>Informe SEO</h1>
+<p><a class="break" href="http://127.0.0.1:8765/" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/</a></p>
+<p class="meta">Generado: 15/11/2026 09:45 UTC · 8 páginas rastreadas</p>
+</header>
+<section class="card summary" aria-label="Resumen"><svg class="gauge" viewBox="0 0 140 140" role="img" aria-label="Nota global: 60 de 100"><circle class="gauge-track" cx="70" cy="70" r="54"/><circle class="gauge-value mid" cx="70" cy="70" r="54" stroke-dasharray="203.6 339.3" transform="rotate(-90 70 70)"/><text class="gauge-number" x="70" y="76" text-anchor="middle">60</text><text class="gauge-unit" x="70" y="92" text-anchor="middle">de 100</text></svg><ul class="categories"><li><div class="cat-head"><span>Rastreo e indexación</span><span class="cat-score">54/100</span></div><div class="bar"><span class="mid" style="width:54%"></span></div></li><li><div class="cat-head"><span>Contenido en página</span><span class="cat-score">75/100</span></div><div class="bar"><span class="mid" style="width:75%"></span></div></li><li><div class="cat-head"><span>Datos estructurados</span><span class="cat-score">0/100</span></div><div class="bar"><span class="bad" style="width:0%"></span></div></li><li><div class="cat-head"><span>Rendimiento y seguridad básicos</span><span class="cat-score">n/d</span></div><div class="bar"><span class="none" style="width:0%"></span></div></li><li><div class="cat-head"><span>Visibilidad en IAs</span><span class="cat-score">83/100</span></div><div class="bar"><span class="good" style="width:83%"></span></div></li></ul></section>
+<section><h2>Prioridades</h2>
+<article class="card check"><div class="check-head"><span class="badge sev-alta">alta</span><h3 class="break">El sitio no usa HTTPS</h3></div><p class="check-meta">1 de 1 afectadas · Rastreo e indexación · <code>https</code></p><p class="break">Sirve todo el sitio por HTTPS y redirige el tráfico HTTP.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/</a> <span class="muted break">— la URL final no es https</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">Páginas sin canonical</h3></div><p class="check-meta">6 de 6 afectadas · Rastreo e indexación · <code>canonical_present</code></p><p class="break">Añade &lt;link rel=&quot;canonical&quot;&gt; apuntando a la URL preferida de cada página.</p><details><summary>Ver ejemplos (6)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/</a></li><li><a class="break" href="http://127.0.0.1:8765/productos" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/productos</a></li><li><a class="break" href="http://127.0.0.1:8765/pan-de-masa-madre" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/pan-de-masa-madre</a></li><li><a class="break" href="http://127.0.0.1:8765/horarios" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/horarios</a></li><li><a class="break" href="http://127.0.0.1:8765/blog/como-conservar-el-pan" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/blog/como-conservar-el-pan</a></li><li><a class="break" href="http://127.0.0.1:8765/contacto" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/contacto</a></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">JSON-LD con errores de sintaxis</h3></div><p class="check-meta">1 de 1 afectadas · Datos estructurados · <code>jsonld_valid</code></p><p class="break">Corrige el JSON de los bloques application/ld+json (solo se valida que sea JSON válido).</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/productos" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/productos</a> <span class="muted break">— 1 de 1 bloques inválidos</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">No se encontró sitemap XML</h3></div><p class="check-meta">1 de 1 afectadas · Rastreo e indexación · <code>sitemap_xml</code></p><p class="break">Publica un sitemap.xml y decláralo en robots.txt.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><span class="break">/sitemap.xml</span> <span class="muted break">— no encontrado</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-baja">baja</span><h3 class="break">Imágenes sin atributo alt</h3></div><p class="check-meta">1 de 1 afectadas · Contenido en página · <code>img_alt</code></p><p class="break">Añade texto alternativo descriptivo (alt vacío solo en imágenes decorativas).</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/productos" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/productos</a> <span class="muted break">— 1 de 1 sin alt</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-baja">baja</span><h3 class="break">La portada no tiene datos estructurados</h3></div><p class="check-meta">1 de 1 afectadas · Datos estructurados · <code>jsonld_home</code></p><p class="break">Añade JSON-LD (Organization o LocalBusiness, WebSite) en la portada.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/</a></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">Títulos duplicados</h3></div><p class="check-meta">2 de 5 afectadas · Contenido en página · <code>title_unique</code></p><p class="break">Da a cada página un título distinto.</p><details><summary>Ver ejemplos (2)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/productos" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/productos</a> <span class="muted break">— compartido con 1 página(s) más</span></li><li><a class="break" href="http://127.0.0.1:8765/pan-de-masa-madre" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/pan-de-masa-madre</a> <span class="muted break">— compartido con 1 página(s) más</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">Páginas sin un único H1</h3></div><p class="check-meta">2 de 6 afectadas · Contenido en página · <code>h1_single</code></p><p class="break">Usa exactamente un H1 por página que describa su tema.</p><details><summary>Ver ejemplos (2)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/pan-de-masa-madre" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/pan-de-masa-madre</a> <span class="muted break">— 2 H1</span></li><li><a class="break" href="http://127.0.0.1:8765/contacto" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/contacto</a> <span class="muted break">— sin H1</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-alta">alta</span><h3 class="break">Páginas sin &lt;title&gt;</h3></div><p class="check-meta">1 de 6 afectadas · Contenido en página · <code>title_present</code></p><p class="break">Cada página necesita un título propio y descriptivo.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/contacto" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/contacto</a></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-baja">baja</span><h3 class="break">Títulos demasiado cortos o largos</h3></div><p class="check-meta">2 de 5 afectadas · Contenido en página · <code>title_length</code></p><p class="break">Intenta que el título tenga entre 30 y 60 caracteres (orientativo).</p><details><summary>Ver ejemplos (2)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/productos" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/productos</a> <span class="muted break">— 17 caracteres</span></li><li><a class="break" href="http://127.0.0.1:8765/pan-de-masa-madre" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/pan-de-masa-madre</a> <span class="muted break">— 17 caracteres</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-alta">alta</span><h3 class="break">Enlaces internos rotos</h3></div><p class="check-meta">1 de 8 afectadas · Rastreo e indexación · <code>broken_links</code></p><p class="break">Actualiza o elimina los enlaces que apuntan a páginas que no existen.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/ofertas" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/ofertas</a> <span class="muted break">— HTTP 404; enlazada desde http://127.0.0.1:8765/</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-alta">alta</span><h3 class="break">Páginas que responden con error</h3></div><p class="check-meta">1 de 8 afectadas · Rastreo e indexación · <code>status_ok</code></p><p class="break">Corrige o redirige las URLs que devuelven 4xx/5xx o no responden.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/ofertas" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/ofertas</a> <span class="muted break">— HTTP 404</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">Páginas sin meta description</h3></div><p class="check-meta">1 de 6 afectadas · Contenido en página · <code>meta_description_present</code></p><p class="break">Escribe una descripción única que resuma la página e invite al clic.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/horarios" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/horarios</a></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">Páginas con noindex</h3></div><p class="check-meta">1 de 6 afectadas · Rastreo e indexación · <code>noindex</code></p><p class="break">Confirma que cada página con noindex es intencionada; si no, quita la directiva.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/blog/como-conservar-el-pan" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/blog/como-conservar-el-pan</a> <span class="muted break">— noindex en meta robots o X-Robots-Tag</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">Páginas con muy poco texto</h3></div><p class="check-meta">1 de 6 afectadas · Contenido en página · <code>thin_content</code></p><p class="break">Amplía o consolida las páginas con menos de 150 palabras.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/horarios" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/horarios</a> <span class="muted break">— 13 palabras</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">Falta la meta viewport</h3></div><p class="check-meta">1 de 6 afectadas · Contenido en página · <code>viewport</code></p><p class="break">Añade &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/horarios" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/horarios</a></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-media">media</span><h3 class="break">Cadenas de redirección</h3></div><p class="check-meta">1 de 8 afectadas · Rastreo e indexación · <code>redirect_chain</code></p><p class="break">Enlaza directamente a la URL final para evitar saltos intermedios.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/tienda" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/tienda</a> <span class="muted break">— http://127.0.0.1:8765/tienda -&gt; http://127.0.0.1:8765/catalogo -&gt; http://127.0.0.1:8765/productos</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-baja">baja</span><h3 class="break">Rastreadores de IA bloqueados en robots.txt</h3></div><p class="check-meta">1 de 6 afectadas · Visibilidad en IAs · <code>ai_crawlers</code></p><p class="break">Si quieres aparecer en respuestas de IA, permite estos agentes. Si el bloqueo es intencionado, ignora este aviso.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><span class="break">/robots.txt</span> <span class="muted break">— GPTBot no puede acceder a /</span></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-baja">baja</span><h3 class="break">Falta el atributo lang en &lt;html&gt;</h3></div><p class="check-meta">1 de 6 afectadas · Contenido en página · <code>lang_attr</code></p><p class="break">Declara el idioma de la página, por ejemplo &lt;html lang=&quot;es&quot;&gt;.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><a class="break" href="http://127.0.0.1:8765/contacto" rel="noopener noreferrer nofollow">http://127.0.0.1:8765/contacto</a></li></ul></details></article>
+<article class="card check"><div class="check-head"><span class="badge sev-info">info</span><h3 class="break">No hay llms.txt (informativo)</h3></div><p class="check-meta">1 de 1 afectadas · Visibilidad en IAs · <code>llms_txt</code></p><p class="break">llms.txt es una propuesta de formato sin efecto demostrado en las respuestas de las IAs; se informa pero no puntúa.</p><details><summary>Ver ejemplos (1)</summary><ul class="examples"><li><span class="break">/llms.txt</span> <span class="muted break">— no encontrado</span></li></ul></details></article>
+</section>
+<section><h2>Comprobaciones superadas (4)</h2><div class="card"><ul class="plain"><li><span class="break">Meta description demasiado corta o larga</span><span class="muted">5 evaluadas</span></li><li><span class="break">Meta descriptions duplicadas</span><span class="muted">5 evaluadas</span></li><li><span class="break">Respuestas HTML lentas (informativo)</span><span class="muted">6 evaluadas</span></li><li><span class="break">Falta robots.txt</span><span class="muted">1 evaluadas</span></li></ul></div></section>
+<section><h2>No evaluadas (3)</h2><div class="card"><ul class="plain"><li><span class="break">Canonical que apunta a otra URL</span></li><li><span class="break">Falta la cabecera HSTS</span></li><li><span class="break">Páginas del sitemap sin enlaces internos</span></li></ul></div></section>
+<footer><p>La nota se calcula en código a partir de las comprobaciones, sin intervención de ningún modelo de lenguaje. Auditor v0.2.0 · fórmula de nota v1.</p></footer>
+</main>
+</body>
+</html>
