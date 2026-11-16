@@ -29,6 +29,9 @@ Repository = "https://github.com/Guille6520/seo-auditor"
 [project.optional-dependencies]
 dev = ["pytest>=8,<9", "ruff>=0.6"]
 
+[project.scripts]
+seo-auditor = "seo_auditor.cli:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
