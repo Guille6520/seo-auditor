@@ -1,0 +1,65 @@
+name: Auditoría SEO
+
+# Solo se ejecuta a mano (Actions > Auditoría SEO > Run workflow), para no gastar
+# minutos de la cuenta sin querer. Si se deja la URL vacía se usa la variable de
+# repositorio AUDIT_URL (Settings > Secrets and variables > Actions > Variables).
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "URL a auditar (si se deja vacía se usa la variable AUDIT_URL)"
+        required: false
+        type: string
+      max_pages:
+        description: "Páginas máximas a rastrear"
+        required: false
+        default: "50"
+        type: string
+      fail_under:
+        description: "Falla el trabajo si la nota es menor que este valor (0 = nunca)"
+        required: false
+        default: "0"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # Los valores se pasan por variables de entorno, nunca se interpolan dentro del script.
+      AUDIT_TARGET: ${{ inputs.url || vars.AUDIT_URL }}
+      AUDIT_MAX_PAGES: ${{ inputs.max_pages || '50' }}
+      AUDIT_FAIL_UNDER: ${{ inputs.fail_under || '0' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install .
+      - name: Comprobar que hay URL
+        run: |
+          if [ -z "$AUDIT_TARGET" ]; then
+            echo "Falta la URL: pásala al lanzar el workflow o define la variable AUDIT_URL." >&2
+            exit 1
+          fi
+      - name: Auditar
+        run: >
+          seo-auditor audit "$AUDIT_TARGET"
+          --max-pages "$AUDIT_MAX_PAGES"
+          --fail-under "$AUDIT_FAIL_UNDER"
+          --out reports
+      - name: Resumen en la página del trabajo
+        if: always()
+        run: |
+          if [ -f reports/informe.md ]; then cat reports/informe.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - name: Guardar informes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: informe-seo
+          path: reports/
+          if-no-files-found: ignore
